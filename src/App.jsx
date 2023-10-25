@@ -1,12 +1,29 @@
-import { useState } from 'react';
-import './App.css';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
+import { Header } from './components/Header';
+import { Navbar } from './components/Navbar';
+import { Project } from './components/Project';
+import { Skill } from './components/Skill';
+//import './App.css';
 
 function App() {
-  const [state, setstate] = useState('');
-
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Navbar />
+      <Header id="Home" />
+      <About id="About" />
+      <Skill id="Skill" />
+      <Project id="Projects" />
+      <Contact id="Contact" />
+      <main>
+        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          {/* <!-- Replace with your content --> */}
+          <div className="px-4 py-6 sm:px-0">
+            <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+          </div>
+          {/* <!-- /End replace --> */}
+        </div>
+      </main>
     </>
   );
 }
