@@ -18,10 +18,10 @@ export function Navbar() {
   };
   return (
     <>
-      <div className="sm:px-8 px-4 py-2 z-10 w-full sticky top-0 bg-stone-600 shadow">
+      <div className="sm:px-8 px-4 py-2 z-10 w-full h-16 text-white sticky top-0 bg-[#212336] shadow">
         <nav className="flex justify-between items-center mx-auto max-w-5xl">
           <a href="#" className="text-3xl font-bold" onClick={scrollToTop}>
-            KERKEB
+            K<span className="text-[#FF4A57]">E</span>RKEB
           </a>
           <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
             {navLinks.map((item) => (
@@ -50,9 +50,9 @@ export function Navbar() {
         </nav>
         {isOpen && (
           <div>
-            <nav className="fixed top-0 right-0 left-0 bottom-0 lg:bottom-auto bg-slate-100  ">
+            <nav className="fixed top-0 right-0 left-0 bottom-1/4 lg:bottom-auto bg-stone-600">
               <div
-                className="hidden max-lg:block fixed right-0  px-8 py-4 cursor-pointer"
+                className="hidden max-lg:block fixed right-0 px-8 py-4 cursor-pointer"
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
@@ -62,7 +62,17 @@ export function Navbar() {
               <ul className=" lg:hidden flex flex-col items-center justify-center h-full ">
                 {navLinks.map((item) => (
                   <li key={item.label}>
-                    <Link activeClass="active" to={item.label} smooth={true} offset={-70} duration={500} className="font-montserrat leading-normal text-lg text-slate-gray">
+                    <Link
+                      activeClass="active"
+                      to={item.label}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                      className="font-montserrat leading-normal text-lg text-slate-gray cursor-pointer hover:text-blue-600 focus:text-purple-950"
+                      onClick={() => {
+                        setIsOpen(!isOpen);
+                      }}
+                    >
                       {item.label}
                     </Link>
                   </li>
